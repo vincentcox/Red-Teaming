@@ -2,7 +2,10 @@
    This script will make a screenshot and send it over HTTP to your interactsh server. Handy if you have a remote (powershell) shell and want to see what the victim is doing.
    For pentesting this is recommend too because it gets the non-tech people excited because it's visual. 
    Bypasses most firewalls.
-   Go to https://app.interactsh.com/ and copy the interactsh URL and adjust it in the script
+   Go to https://app.interactsh.com/ and copy the interactsh URL and adjust it in the script.
+   
+   Your incoming screenshots are bmp files and base64 encoded. Copy the payload and paste them on this site:   https://base64.guru/converter/decode/image/bmp 
+   or google something like "bmp base64 decode". Everything has an online tool now... 
 #>
 
 $File = "$Env:PUBLIC\Screenshot1.bmp" 
