@@ -12,6 +12,10 @@ Runs eyewitness with input a Nessus file, saves output to folder:
 eyewitness -x Nessus_Scan.nessus -d directory_name
 ```
 
+You'll find many devices with web interfaces. Many devices have default credentials. In most cases the vendor name and model/software version is listed in the web page. Just use google to find default credentials for it and try some out. In many cases you'll get even into the core network devices of the network with this approach...
+
+![default credentials](https://user-images.githubusercontent.com/9286611/141475684-0efda993-448d-4d88-a426-170b50289cf2.png)
+
 
 # WiFi
 ## WEP and WPA2
