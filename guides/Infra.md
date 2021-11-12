@@ -6,7 +6,15 @@ Scan the top ports in several subnets at once, write output to a file with `tee`
 masscan -p 20,21-23,25,53,80,110-111,135,139,143,443,445,993,995,1723,3306,3389,5900,8080 10.1.2.0/24 10.1.3.0/24 | tee -a scan_from_subnet.txt
 ```
 
-## Web Interfaces
+## Network Layer security
+When connected to the network you can perform a classic Man-in-the-middle attack (ARP spoofing): 
+```bash
+sudo ettercap -T -M arp:remote /10.1.4.1-220// /10.1.31.1// -w capture_file_name.pcap
+```
+In this example, we ARP spoof the clients on IP range 10.1.4.1-220 and the default gateway 10.1.31.1. This allows us to capture all network traffic between the hosts and the default gateway.
+The captured traffic can be analyzed for interesting information. 
+
+## Web Interfaces - Default Credentials
 Runs eyewitness with input a Nessus file, saves output to folder:
 ```bash
 eyewitness -x Nessus_Scan.nessus -d directory_name
