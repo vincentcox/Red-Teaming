@@ -7,4 +7,6 @@ Some handy Red Teaming tricks and snippets brewed together during assesments
 Epic idea's and brainstorms with: 
 - Jo 
 - Skeltavic 
-- Koen, oswp 📶 senpai
+- Koen, oswp 📶 senpai 
+- vdb-sander
+- Justin
