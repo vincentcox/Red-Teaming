@@ -22,12 +22,28 @@ sudo responder -I eth0 -b -w
 
 If you obtained hashes you can crack it with several approaches in hashcat:
 __Mask__
+The following command will run a mask attack:
+```bash
+hashcat -m 5600 -a 3 --opencl-device-types 1 hash.txt -1 '?l?d' -2 '?l?u' '?u?l?l?l?1?1?1?1' # Change 5600 to the hashcat type number.
+```
+_Ommit `--opencl-device-types 1` on Linux or Windows._
+
+View the mask identifiers [Hashcat Identifiers](https://hashcat.net/wiki/doku.php?id=mask_attack#custom_charsets). 
 
 __Custom crafted wordlist__
 [Mentalist](https://github.com/sc0tfree/mentalist) is a great tool to create visually custom wordlists. 
 
 ![Mentalist_config](https://user-images.githubusercontent.com/9286611/141745990-642b15a6-0f63-4f32-9de1-f2cd79e4a50d.png)
+See config file: _guides/files/mentalist_chain.mentalist_
 
+You can then run hashcat with:
+```bash
+hashcat -m 5600 -a 0 --opencl-device-types 1 hash.txt /Users/vincentcox/custom_mentalist.list # On Mac. Change 5600 to the hashcat type number.
+```
+_Ommit `--opencl-device-types 1` on Linux or Windows._
+
+__Free Online Cracking__
+In addition to the cracking methods mentioned above, it's worth a shot to use https://www.onlinehashcrack.com/ in parallel (which is free to use). 
 
 ## Web Interfaces - Default Credentials
 Runs eyewitness with input a Nessus file, saves output to folder:
@@ -62,6 +78,8 @@ aircrack-ng -w <wordlist> <capture>
 Alternatively, if you have and Airolib-ng database, it can be passed to Aircrack:
 aircrack-ng -r <db name> <capture>
 ```
+
+In addition to the cracking methods mentioned above, it's worth a shot to use https://www.onlinehashcrack.com/ in parallel (which is free to use). 
 
 
 ## WPA-Enterprise
