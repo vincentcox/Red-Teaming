@@ -1,4 +1,4 @@
-# Exfiltrate data
+# Exfiltrate and find data and info
 On victim/client:
 
 In powershell shell (powershell has the wget command):
@@ -39,7 +39,7 @@ Invoke-BloodHound -CollectionMethod ACL,ObjectProps,Default  -OutputDirectory "$
 
 View AV used:
 ```powershell
-WMIC /Node:localhost /Namespace:\\root\SecurityCenter2 Path AntiVirusProduct Get displayName /Format:List
+WMIC /Node:localhost /Namespace:\\root\SecurityCenter2 Path AntiVirusProduct Get displayName /Format:List #Powershell
 ```
 
 View information about current user:
@@ -47,4 +47,10 @@ View information about current user:
 whoami
 net user <name_user_whoami_without_domain> /domain
 hostname
+```
+
+Show mounted shares:
+```
+Get-WmiObject Win32_NetworkConnection | ft "LocalName","RemoteName" -A #powershell
+net use # cmd
 ```
