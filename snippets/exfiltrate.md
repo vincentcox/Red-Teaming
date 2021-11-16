@@ -36,3 +36,15 @@ mkdir "$Env:PUBLIC\bloodhound"
 Invoke-BloodHound -CollectionMethod ACL,ObjectProps,Default  -OutputDirectory "$Env:PUBLIC\bloodhound"
 # use file/pdf extraction to get the zip file. 
 ```
+
+View AV used:
+```powershell
+WMIC /Node:localhost /Namespace:\\root\SecurityCenter2 Path AntiVirusProduct Get displayName /Format:List
+```
+
+View information about current user:
+```powershell
+whoami
+net user <name_user_whoami_without_domain> /domain
+hostname
+```
