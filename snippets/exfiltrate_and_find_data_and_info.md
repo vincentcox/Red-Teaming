@@ -54,3 +54,10 @@ Show mounted shares:
 Get-WmiObject Win32_NetworkConnection | ft "LocalName","RemoteName" -A #powershell
 net use # cmd
 ```
+
+Get clipboard content: 
+
+```powershell
+powershell -command "Get-Clipboard"
+```
+
