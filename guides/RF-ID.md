@@ -11,10 +11,12 @@ pm3-> hf search
 ```
 
 Useful mifare classic 1k read commands:
+```
 hf search
 hf 14a reader -> reads basic info like uid
 hf 14a info -> same as reader but more info is given
 hf mf cgetblk --blk 0 -> reads raw hex from block 0, which is the manufacturing block. Contains UID followed by the BCC which needs to be correct!
+```
 
 ### Writing UID to card
 Below is an example to write to a mifare classic 1k card (gen 1a):
