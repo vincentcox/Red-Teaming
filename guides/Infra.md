@@ -46,10 +46,23 @@ __Free Online Cracking__
 In addition to the cracking methods mentioned above, it's worth a shot to use https://www.onlinehashcrack.com/ in parallel (which is free to use). 
 
 ## Web Interfaces - Default Credentials
-Runs eyewitness with input a Nessus file, saves output to folder:
-```bash
-eyewitness -x Nessus_Scan.nessus -d directory_name
+**EYEWITNESS DOES NOT WORK ON ARM, SO IF YOU ARE USING MAC WITH M1/M2/M... CHIP, USE AN INTEL MACHINE WITH VM.**
+
+To reduce time it can be usefull to use masscan or nmap.
+Example:
 ```
+nmap -iL list.txt -p 80,443,8080,8888,8081,8433 -Pn -oA nmap_result
+```
+Runs eyewitness with input a nmap file, saves output to folder and **waits enough time to render it** (amongs other interesting flags):
+```
+eyewitness -x nmap_result.xml -d results --timeout 30 --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36' --threads 6 --delay 10
+```
+
+Runs eyewitness with input a Nessus file, saves output to folder and **waits enough time to render it** (amongs other interesting flags):
+```bash
+eyewitness -x Nessus_Scan.nessus -d directory_name --timeout 30 --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36' --threads 6 --delay 10
+```
+
 
 You'll find many devices with web interfaces. Many devices have default credentials. In most cases the vendor name and model/software version is listed in the web page. Just use google to find default credentials for it and try some out. In many cases you'll get even into the core network devices of the network with this approach...
 
